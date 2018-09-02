@@ -1,0 +1,29 @@
+{
+    "name": "ruogoo/ruogu-foundation",
+    "description": "",
+    "authors": [{
+        "name": "HyanCat",
+        "email": "hyancat.cn@gmail.com"
+    }],
+    "require": {
+        "php": ">= 7.2",
+        "illuminate/support": "5.6.*"
+    },
+    "require-dev": {
+        "phpspec/phpspec": "~4.2",
+        "phpunit/phpunit": "~7.0"
+    },
+    "autoload": {
+        "files": [
+            "src/helpers.php"
+        ],
+        "psr-4": {
+            "Ruogu\\Foundation\\": "src/"
+        }
+    },
+    "autoload-dev": {
+        "psr-4": {
+            "Tests\\": "tests/"
+        }
+    }
+}
