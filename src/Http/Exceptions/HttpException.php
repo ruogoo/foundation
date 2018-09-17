@@ -7,7 +7,7 @@
  * Copyright (C) HyanCat. All rights reserved.
  */
 
-namespace Ruogu\Http\Exceptions;
+namespace Ruogu\Foundation\Http\Exceptions;
 
 use Symfony\Component\HttpKernel\Exception\HttpException as SymfonyException;
 
