@@ -7,21 +7,21 @@
  * Copyright (C) HyanCat. All rights reserved.
  */
 
-if (! function_exists('is_not_null')) {
+if (!function_exists('is_not_null')) {
     function is_not_null($var): bool
     {
         return null !== $var;
     }
 }
 
-if (! function_exists('is_local')) {
+if (!function_exists('is_local')) {
     function is_local(): bool
     {
         return app()->isLocal();
     }
 }
 
-if (! function_exists('is_production')) {
+if (!function_exists('is_production')) {
     function is_production(): bool
     {
         return app()->environment() === 'production';
@@ -138,9 +138,9 @@ function user_event(string $eventName, array $properties = [])
 function invert(&$var, $property = null)
 {
     if (null === $property) {
-        $var = ! $var;
+        $var = !$var;
     } else {
-        $var->$property = ! $var->$property;
+        $var->$property = !$var->$property;
     }
 
     return $var;
@@ -189,9 +189,9 @@ function RGClosure($closure): bool
 function RGInvert(&$var, $property = null)
 {
     if (null === $property) {
-        $var = ! $var;
+        $var = !$var;
     } else {
-        $var->$property = ! $var->$property;
+        $var->$property = !$var->$property;
     }
 
     return $var;
@@ -208,7 +208,7 @@ function RGCdn($filePath)
 
 function RGRoute(string $name, $parameters = []): string
 {
-    if (! \Illuminate\Support\Facades\Route::has($name)) {
+    if (!\Illuminate\Support\Facades\Route::has($name)) {
         return '';
     }
     $url = route($name, $parameters, true);
@@ -267,4 +267,18 @@ function RGElixir($file, $baseDir = null)
 function RGMix($file, $manifestDirectory = ''): string
 {
     return mix($file, $manifestDirectory)->toHtml();
+}
+
+if (!function_exists('hashid_encode')) {
+    function hashid_encode($id)
+    {
+        return \Vinkla\Hashids\Facades\Hashids::encode($id);
+    }
+}
+
+if (!function_exists('hashid_decode')) {
+    function hashid_decode($hashedId)
+    {
+        return \Vinkla\Hashids\Facades\Hashids::decode($hashedId);
+    }
 }

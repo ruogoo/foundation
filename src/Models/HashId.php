@@ -30,7 +30,7 @@ trait HashId
     {
         $key = $this->hashKey();
         if ($key != null) {
-            return Hashids::encode($this->$key);
+            return hashid_encode($this->$key);
         }
         return null;
     }
