@@ -9,6 +9,8 @@
 
 namespace Ruogu\Foundation\Models;
 
+use Vinkla\Hashids\Facades\Hashids;
+
 trait HashId
 {
     /**
