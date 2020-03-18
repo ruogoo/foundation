@@ -7,6 +7,9 @@
  * Copyright (C) HyanCat. All rights reserved.
  */
 
+use Illuminate\Support\Str;
+use Webmozart\PathUtil\Path as P;
+
 if (!function_exists('is_not_null')) {
     function is_not_null($var): bool
     {
@@ -98,7 +101,7 @@ function RGNoContent()
 
 function RGImage($url, $style = null)
 {
-    if (null !== $style && str_contains($url, 'o.ruogoo.cn')) {
+    if (null !== $style && Str::contains($url, 'o.ruogoo.cn')) {
         return str_replace('o.ruogoo.cn', 'i.ruogoo.cn', $url) . '@!' . $style;
     }
 
@@ -145,8 +148,6 @@ function invert(&$var, $property = null)
 
     return $var;
 }
-
-use Webmozart\PathUtil\Path as P;
 
 /**
  * @param $var
